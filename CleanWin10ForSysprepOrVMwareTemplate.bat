@@ -24,12 +24,11 @@ rem ****************************************************************
 @ECHO OFF
 
 rem ****************************************************************
-rem Remove apps that were added or updated through Windows Apps Store after the Win10 installation, 
-rem or remove apps that are not installed for "everyone"
+rem Remove Window's "Built-In" apps that were added or updated through Windows Apps Store after the Win10 installation, 
 rem Evoke powershell with "privilege escalation" (haha).
 rem ****************************************************************
 
-powershell -c "Get-AppxPackage|remove-AppxPackage"
+powershell -c "Get-AppxPackage -allusers | Remove-AppxPackage"
 
 rem ****************************************************************
 rem Stop and disable Windows update service
